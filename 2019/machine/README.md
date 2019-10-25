@@ -11,19 +11,13 @@ Aims to provide an interface based on gesture classification using ML. This code
 
 We've set up a separate document for our [contribution guidelines](./CONTRIBUTING.md) in this project.
 
-### Installation(Common for all solutions)
+### Installation
 
 ```sh
 npm install
 ```
 
-### Run(Common for all solutions)
-
-```sh
-node src/index.js
-```
-
-or
+### Run
 
 ```sh
 npm start
