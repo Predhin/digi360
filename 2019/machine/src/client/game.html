@@ -19,7 +19,12 @@
 
   <!-- html -->
   <div class="container-fluid">
-    <label>Home</label>
+	<canvas id="gameCanvas" width="740" height="500">
+		This browser can not run this game (canvas support missing).
+	</canvas>
+	<video class="canvasbox" autoplay="autoplay" id="myvideo"></video>
+	<canvas id="tracking" class="videobox canvasbox">
+	</canvas>
   </div>
   <!-- html -->
 
@@ -29,8 +34,9 @@
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./node_modules/handtrackjs/dist/handtrack.min.js"></script>
   <!-- Application script -->
-  <script type="text/javascript" src="js/game/app/main.js"></script>
+  <script type="module" src="js/game/app/main.js"></script>
   <!-- All you have to do is include the reload script and have it be on every page of your project -->
   <!-- You do not create this route, reload creates it for you automatically -->
   <script src="/reload/reload.js"></script>

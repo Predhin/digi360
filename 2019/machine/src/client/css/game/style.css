@@ -1,0 +1,21 @@
+canvas{
+    margin: 0px auto;
+}
+		
+
+.canvasbox {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 3px;
+    margin-right: 10px;
+    width: 215px;
+    height: 162px;
+    border-bottom: 3px solid #0063FF;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 #00000030;
+
+}
+
+.videobox {
+    border: 2px solid #fff;
+}
