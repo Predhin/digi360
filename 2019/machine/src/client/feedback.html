@@ -13,13 +13,54 @@
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <!-- Application styles -->
   <link rel="stylesheet" href="css/feedback/style.css">
+  <link rel="stylesheet" href="css/feedback/common.css">
 </head>
 
 <body>
-
   <!-- html -->
   <div class="container-fluid">
-    <label>Home</label>
+    <div class="card card-body bg-light">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+          <div class="webcam-container">
+            <div class="webcam-outer-wrapper" id="webcam-outer-wrapper">
+              <div id="webcam-inner-wrapper" class="webcam-inner-wrapper center">
+                <div id="no-webcam" class="hide">
+                  <img class="emoji" src="./img/icn_emoji.png" />
+                  <p>No webcam found.</p>
+                  <p>You will need a webcam device to use this demo.</p>
+                </div>
+                <video autoplay playsinline muted width="224px" height="224px" id="webcam"></video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-2 pb-2">
+      <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 text-center">
+        <!-- User Help  -->
+        <div id="user-help" class="text-center" style="visibility:hidden">
+          <img src="./img/shape.svg" /><span id="user-help-text"></span>
+        </div>
+      </div>
+    </div>
+    <div class="card card-body bg-light">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+          <div class="rating text-center">
+            <!-- Thumbs up -->
+            <div class="like grow">
+              <i class="fa fa-thumbs-up fa-3x like up" aria-hidden="true"></i>
+            </div>
+            <!-- Thumbs down -->
+            <div class="dislike grow">
+              <i class="fa fa-thumbs-down fa-3x like down" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- html -->
 
@@ -29,8 +70,14 @@
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- Application script -->
-  <script type="text/javascript" src="js/feedback/app/main.js"></script>
+  <!-- Load TensorFlow.js -->
+  <script src="./node_modules/@tensorflow/tfjs/dist/tf.min.js"> </script>
+  <script src="./js/feedback/libs/tf-core.min.js"> </script>
+
+    <!-- Application script -->
+    <script src="./js/feedback/app/runner/webcam.js"></script>
+    <script type="text/javascript" src="js/feedback/app/runner/index.js"></script>
+
   <!-- All you have to do is include the reload script and have it be on every page of your project -->
   <!-- You do not create this route, reload creates it for you automatically -->
   <script src="/reload/reload.js"></script>
