@@ -96,10 +96,12 @@ export class Feedback {
             } else if (handTrackPrediction && handTrackPrediction.length > 1) {
                 // more than 1 hand detected
                 console.info(":: More than 1 hand detected! ::")
+                FeedbackUI.removeActiveClass();
 
             } else {
                 // no hand detected
                 console.info(":: No hand detected! ::")
+                FeedbackUI.removeActiveClass();
             }
         }
         FeedbackUI.donePredicting();
