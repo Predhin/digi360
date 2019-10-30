@@ -127,6 +127,11 @@ export class Game {
 
 				this.context.fillText("Paused", this.client.width / 2, this.client.height / 2);
 
+				this.background.draw();
+				this.player.draw();
+				this.opponent.draw();
+				this.ball.draw();
+
 			}
 		}
 		else if (this.state == "start") {

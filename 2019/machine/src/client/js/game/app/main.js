@@ -56,10 +56,11 @@ export class Tracking {
                 console.log('Mid  X:', midval_x);
                 console.log('Mid  Y:', midval_y);
                 let game_x = this.game.client.width * (midval_x / this.video.width);
-                let game_y = this.game.client.height * (midval_y / this.video.height);
+                let game_y = this.game.client.height * (predictions[0].bbox[1] / (this.video.height * 0.5));
                 //updatePaddleControl(gamex)
                 console.log('Game  X:', game_x);
                 console.log('Game  Y:', game_y);
+                game_y = game_y - 100;
                 this.game.player.paddle.updatewithTracking(game_y);
                 console.log('Paddle x  :' + this.game.player.paddle.position.x);
                 console.log('Paddle y  :' + this.game.player.paddle.position.y);

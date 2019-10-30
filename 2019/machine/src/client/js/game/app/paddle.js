@@ -27,9 +27,11 @@ export class Paddle {
 	}
 
 	updatewithTracking(updatedVal) {
-		this.checkCollisions();
+		
 		this.position.y = updatedVal;
+		this.checkCollisions();
 		this.updateTime = new Date().getTime();
+		//this.draw();
 	}
 
 	draw() {
@@ -53,8 +55,8 @@ export class Paddle {
 			this.parent.game.ball.velocity.x *= -1;
 
 			// Increase the speed of game
-			this.parent.game.ball.velocity.x *= 1.1;
-			this.parent.game.ball.velocity.y *= 1.1;
+			// this.parent.game.ball.velocity.x *= 1.1;
+			// this.parent.game.ball.velocity.y *= 1.1;
 		}
 	}
 
