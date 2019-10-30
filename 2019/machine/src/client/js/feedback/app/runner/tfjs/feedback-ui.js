@@ -1,6 +1,6 @@
 export class FeedbackUI {
     constructor() {
-
+        
     }
     static isPredicting() {
         document.getElementById('webcam-outer-wrapper').style.border =
@@ -23,5 +23,11 @@ export class FeedbackUI {
         console.log(className);
         FeedbackUI.removeActiveClass();
         $(`.${className}`).addClass('active');
+    }
+    static showLoading() {
+        $('#webcam-inner-wrapper .loader').show();
+    }
+    static hideLoading() {
+        $('#webcam-inner-wrapper .loader').hide();
     }
 }

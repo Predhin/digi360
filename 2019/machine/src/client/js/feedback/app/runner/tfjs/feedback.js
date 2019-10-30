@@ -18,6 +18,7 @@ class FeedbackConstants {
 export class Feedback {
 
     constructor() {
+        FeedbackUI.showLoading();
         // initialize the core
         this.init().then(()=>{
             // start
@@ -45,9 +46,11 @@ export class Feedback {
             tf.tidy(() => this.mobilenet.predict(this.webcam.capture()));
             this.isPredicting = true;
             this.predict();
+            FeedbackUI.hideLoading();
         } catch (e) {
             console.log(e);
             FeedbackUI.stopPredicting();
+            FeedbackUI.hideLoading();
         }
     }
     async loadMobilenet() {
