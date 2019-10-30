@@ -1,13 +1,5 @@
-let webcam;
-let isPredicting = false;
-const modelParams = {
-    flipHorizontal: true,   // flip e.g for video 
-    imageScaleFactor: 0.7,  // reduce input image size for gains in speed.
-    maxNumBoxes: 20,        // maximum number of boxes to detect
-    iouThreshold: 0.5,      // ioU threshold for non-max suppression
-    scoreThreshold: 0.79,    // confidence threshold for predictions.
-}
 import { FeedbackUI } from './feedback-ui.js';
+import { Webcam } from './webcam.js';
 class FeedbackConstants {
     static NUM_CLASSES = 3;
     static DENSE_UNIT = 100;
@@ -15,6 +7,13 @@ class FeedbackConstants {
     static BATCH_SIZE = 0.4;
     static EPOCHS = 20;
     static controlsCaptured = ["up", "down", "left"];
+    static modelParams = {
+        flipHorizontal: true,   // flip e.g for video 
+        imageScaleFactor: 0.7,  // reduce input image size for gains in speed.
+        maxNumBoxes: 20,        // maximum number of boxes to detect
+        iouThreshold: 0.5,      // ioU threshold for non-max suppression
+        scoreThreshold: 0.79,    // confidence threshold for predictions.
+    };
 }
 export class Feedback {
 
@@ -26,24 +25,25 @@ export class Feedback {
         });
     }
     async init() {
+        this.isPredicting = false;
         this.mobilenet = await this.loadMobilenet();
         this.localnet = await this.loadLocalnet();
         console.log('Loaded Mobilenet & Localnet models');
         // Load the model.
-        this.handTrackModel = await handTrack.load(modelParams);
+        this.handTrackModel = await handTrack.load(FeedbackConstants.modelParams);
         console.log('Loaded HandtrackerJS model');
     }
     async run() {
         try {
             // A webcam class that generates Tensors from the images from the webcam.
-            webcam = new Webcam(document.getElementById('webcam'));
-            await webcam.setup();
+            this.webcam = new Webcam(document.getElementById('webcam'));
+            await this.webcam.setup();
             console.log('Webcam is on');
             // Warm up the model. This uploads weights to the GPU and compiles the WebGL
             // programs so the first time we collect data from the webcam it will be
             // quick.
-            tf.tidy(() => this.mobilenet.predict(webcam.capture()));
-            isPredicting = true;
+            tf.tidy(() => this.mobilenet.predict(this.webcam.capture()));
+            this.isPredicting = true;
             this.predict();
         } catch (e) {
             console.log(e);
@@ -66,13 +66,13 @@ export class Feedback {
     }
     async predict() {
         FeedbackUI.isPredicting();
-        while (isPredicting) {
-            const handTrackPrediction = await this.handTrackModel.detect(webcam.webcamElement);
+        while (this.isPredicting) {
+            const handTrackPrediction = await this.handTrackModel.detect(this.webcam.webcamElement);
             if (handTrackPrediction && handTrackPrediction.length === 1) {
                 // detected only one hand
                 const predictedClass = tf.tidy(() => {
                     // Capture the frame from the webcam.
-                    const img = webcam.capture();
+                    const img = this.webcam.capture();
 
                     // Make a prediction through mobilenet, getting the internal activation of
                     // the mobilenet model.
