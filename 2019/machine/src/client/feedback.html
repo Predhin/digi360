@@ -70,13 +70,15 @@
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Load Handtrack.js -->
+  <script src="./node_modules/handtrackjs/dist/handtrack.min.js"></script>
   <!-- Load TensorFlow.js -->
   <script src="./node_modules/@tensorflow/tfjs/dist/tf.min.js"> </script>
   <script src="./js/feedback/libs/tf-core.min.js"> </script>
 
     <!-- Application script -->
     <script src="./js/feedback/app/runner/tfjs/webcam.js"></script>
-    <script type="text/javascript" src="js/feedback/app/runner/tfjs/index.js"></script>
+    <script type="module" src="js/feedback/app/runner/tfjs/main.js"></script>
 
   <!-- All you have to do is include the reload script and have it be on every page of your project -->
   <!-- You do not create this route, reload creates it for you automatically -->

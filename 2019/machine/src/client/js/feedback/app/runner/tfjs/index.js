@@ -11,6 +11,7 @@
     let mobilenet;
     let localnet;
     let model;
+    let handTrackModel;
     let isPredicting = false;
 
     // Loads mobilenet and returns a model that returns the internal activation
@@ -49,6 +50,15 @@
             // quick.
             tf.tidy(() => mobilenet.predict(webcam.capture()));
             isPredicting = true;
+            // Load the model.
+            const modelParams = {
+                flipHorizontal: true,   // flip e.g for video 
+                imageScaleFactor: 0.7,  // reduce input image size for gains in speed.
+                maxNumBoxes: 20,        // maximum number of boxes to detect
+                iouThreshold: 0.5,      // ioU threshold for non-max suppression
+                scoreThreshold: 0.79,    // confidence threshold for predictions.
+              }
+            handTrackModel = await handTrack.load(modelParams);
             predict();
         } catch (e) {
             console.log(e);
@@ -60,29 +70,40 @@
     async function predict() {
         predicting();
         while (isPredicting) {
-            const predictedClass = tf.tidy(() => {
-                // Capture the frame from the webcam.
-                const img = webcam.capture();
+            const handTrackPrediction = await handTrackModel.detect(webcam.webcamElement);
+            if (handTrackPrediction && handTrackPrediction.length === 1) {
+                // detected only one hand
+                const predictedClass = tf.tidy(() => {
+                    // Capture the frame from the webcam.
+                    const img = webcam.capture();
 
-                // Make a prediction through mobilenet, getting the internal activation of
-                // the mobilenet model.
-                const activation = mobilenet.predict(img);
+                    // Make a prediction through mobilenet, getting the internal activation of
+                    // the mobilenet model.
+                    const activation = mobilenet.predict(img);
 
-                // Make a prediction through our newly-trained model using the activation
-                // from mobilenet as input.
-                const predictions = localnet.predict(activation);
+                    // Make a prediction through our newly-trained model using the activation
+                    // from mobilenet as input.
+                    const predictions = localnet.predict(activation);
 
-                // Returns the index with the maximum probability. This number corresponds
-                // to the class the model thinks is the most probable given the input.
-                return predictions.as1D().argMax();
-            });
+                    // Returns the index with the maximum probability. This number corresponds
+                    // to the class the model thinks is the most probable given the input.
+                    return predictions.as1D().argMax();
+                });
 
-            let classId = (await predictedClass.data())[0];
-            predictedClass.dispose();
-            classId = Math.floor(classId);
-            const className = controlsCaptured[classId];
-            toggleState(className);
-            await tf.nextFrame();
+                let classId = (await predictedClass.data())[0];
+                predictedClass.dispose();
+                classId = Math.floor(classId);
+                const className = controlsCaptured[classId];
+                toggleState(className);
+                await tf.nextFrame();
+            } else if(handTrackPrediction && handTrackPrediction.length > 1) {
+                // more than 1 hand detected
+                console.info(":: More than 1 hand detected! ::")
+
+            } else {
+                // no hand detected
+                console.info(":: No hand detected! ::")
+            }
         }
         donePredicting();
     }
