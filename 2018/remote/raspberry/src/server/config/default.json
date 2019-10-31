@@ -1,0 +1,6 @@
+{
+    "remote": {
+        "LOCAL": "http://192.168.43.147",
+        "DEV": "io.adafruit.com"
+    }
+}

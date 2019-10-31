@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #25377e;
+      }
+
+      .cls-2 {
+        fill: #4dad29;
+      }
+    </style>
+  </defs>
+  <g id="Group_298" data-name="Group 298" transform="translate(-914.5 -246)">
+    <path id="Path_79" data-name="Path 79" class="cls-1" d="M9.5,0a9.5,9.5,0,0,1,0,19" transform="translate(952.5 255.5) rotate(90)"/>
+    <path id="Subtraction_1" data-name="Subtraction 1" class="cls-1" d="M-3089.5-1445.5h-19a9.511,9.511,0,0,1,9.5-9.5,9.511,9.511,0,0,1,9.5,9.5Z" transform="translate(4023 1710.5)"/>
+    <path id="Path_81" data-name="Path 81" class="cls-2" d="M9.5,0a9.5,9.5,0,0,1,0,19" transform="translate(943 284) rotate(180)"/>
+    <path id="Subtraction_2" data-name="Subtraction 2" class="cls-2" d="M-3089.5-1445.5h-19a9.511,9.511,0,0,1,9.5-9.5,9.511,9.511,0,0,1,9.5,9.5Z" transform="translate(-512 3354.5) rotate(90)"/>
+  </g>
+</svg>

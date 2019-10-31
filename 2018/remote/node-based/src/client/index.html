@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Remote-Digi360</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 noSpace">
+        <div class="video-box">
+          <img id="regionOfCapture" />
+          <div class="overlay-square">
+            <div class="overlay-square-inner instruction">
+              <div class="row overlay-square-inner-container">
+                <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                  <img class="hand" src="./svg/hand.svg" alt="Hand Gesture">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 col-md-offset-3">
+                  <p class="animated fadeIn handgesture-instruction text-center">
+                    Please place your hand infront of the camera screen to control the device
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+        <div class="row fullHeight">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 fullHeight">
+            <div class="row padTop">
+              <div class="col-xs-7 col-md-offset-3 output-container">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                    <div class="fan-body">
+                      <object data="svg/fan-body.svg" type="image/svg+xml">
+                        <img src="./images/fan-body.png" />
+                      </object>
+                      <div id="fan" class="fan-leaf fan fa-spin off">
+                        <object data="svg/fan-leaf.svg" type="image/svg+xml">
+                          <img src="./images/fan-leaf.png" />
+                        </object>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row fullWidth text-center">
+                  <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                    <div id="welcome" class="row instruction">
+                      <h2 class="current-status">Welcome</h2>
+                    </div>
+                    <div class="row">
+                      <div id="scanning-container">
+                        <div id="scanning-loader" class="scanning-loader start">
+                          <object data="svg/scanning.svg" type="image/svg+xml">
+                            <img src="./images/scanning.png" />
+                          </object>
+                        </div>
+                        <h2 id="scanning" class="current-status">Scanning</h2>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div id="detection" class="detection">
+                        <h2 id="welcome" class="current-status">Detected Speed</h2>
+                        <br>
+                        <h1 id="text">OFF
+                        </h1>
+                        <h4 class="output-instruction">Place your hand over and change the speed</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

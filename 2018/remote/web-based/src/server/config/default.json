@@ -1,0 +1,7 @@
+{
+    "remote": {
+        "LOCAL": "http://192.168.43.147",
+        "DEV": "https://io.adafruit.com/api/v2/predhin/feeds/switcher/data",
+        "TOKEN": "?X-AIO-Key=bcb7f4793cb64f028ed58092cd6b647d"
+    }
+}
