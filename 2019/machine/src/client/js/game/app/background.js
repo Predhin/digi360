@@ -25,9 +25,9 @@ export class Background {
 
 
 		if (typeof (this.game.opponent) != "undefined" && typeof (this.game.player) != "undefined") {
-			this.game.drawRectangle("#333333", 0, this.game.client.height / 2, this.game.client.width, 1);
-			this.game.context.fillText(this.game.opponent.score, this.game.client.width / 2, this.game.client.height / 4);
-			this.game.context.fillText(this.game.player.score, this.game.client.width / 2, (this.game.client.height - (this.game.client.height / 4)));
+			this.game.drawRectangle("#333333", this.game.client.width/2, 0, 1 , this.game.client.height);
+			this.game.context.fillText(this.game.opponent.score, this.game.client.width / 4, this.game.client.height / 2);
+			this.game.context.fillText(this.game.player.score, (this.game.client.width - (this.game.client.width / 4)) ,this.game.client.height / 2);
 		}
 		else {
 			this.game.context.font = 'bold 50px sans-serif';

@@ -1,6 +1,10 @@
 canvas{
     margin: 0px auto;
 }
+
+body{
+    background-color: black;
+}
 		
 
 .canvasbox {
@@ -18,4 +22,16 @@ canvas{
 
 .videobox {
     border: 2px solid #fff;
+}
+
+div.gameContainer{
+    margin-top: 20px;
+}
+
+#gameCanvas{
+    padding: 0;
+    margin: auto;
+    display: block;
+    box-shadow: 22px 20px 19px #888888;
+    border: 1px solid #20b2aa;
 }
