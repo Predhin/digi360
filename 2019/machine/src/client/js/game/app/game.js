@@ -3,10 +3,9 @@ import { Player } from './player.js';
 import { Opponent } from './opponent.js';
 import { Ball } from './ball.js';
 
-class GameConstants{
-	static NUM_OF_PLAYERS = 1;
-	static DIFFICULTY_LEVEL = 3;
-}
+export const NUM_OF_PLAYERS = 1;
+export const DIFFICULTY_LEVEL = 3;
+
 
 export class Game {
 	constructor(canvas_id) {
@@ -15,8 +14,8 @@ export class Game {
 		this.canvas = document.getElementById(canvas_id);
 		this.context = this.canvas.getContext("2d");
 		this.client = { width: this.canvas.width, height: this.canvas.height };
-		this.number_of_players = GameConstants.NUM_OF_PLAYERS;
-		this.difficulty = GameConstants.DIFFICULTY_LEVEL;
+		this.number_of_players = NUM_OF_PLAYERS;
+		this.difficulty = DIFFICULTY_LEVEL;
 		this.state = "start";
 
 		// Controls
@@ -123,8 +122,12 @@ export class Game {
 				this.context.fillStyle = '#FF0000';
 				this.context.font = 'bold 80px sans-serif';
 				this.context.textBaseline = 'middle';
-				this.context.textAlign = 'center';
-
+				this.context.textAlign = 'center';			
+				/* Uncomment for debugging pupose only
+				this.background.draw();
+				this.player.draw();
+				this.opponent.draw();
+				this.ball.draw();*/
 				this.context.fillText("Paused", this.client.width / 2, this.client.height / 2);
 
 			}

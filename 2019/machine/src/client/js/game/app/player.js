@@ -11,7 +11,7 @@ export class Player {
 
 		// Setup the paddle
 		// Position the player at the bottom of the screen in the center
-		this.default_position = { x: this.game.client.width - (this.paddle.width + 10), y: (this.game.client.height / 2) - (this.paddle.height / 2) };
+		this.default_position = { x: this.game.client.width - (this.paddle.width + 10), y: 0 };
 		this.paddle.position = { x: this.default_position.x, y: this.default_position.y };
 
 		this.score = 0;
@@ -59,11 +59,11 @@ export class Player {
 
 	resetLevel() {
 		// Position the player at the bottom of the screen in the center
-		this.paddle.position =
+		/*this.paddle.position =
 			{
 				x: this.default_position.x,
 				y: this.default_position.y
-			}
+			}*/
 		this.paddle.resetLevel();
 	}
 }
