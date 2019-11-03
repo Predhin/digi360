@@ -29,9 +29,5 @@ Before you submit your pull request consider the following guidelines:
 ### Maintainers
 
 * [Anup George](mailto:anup.george@gmail.com)
-* [Daion Paul](mailto:)
-* [Jijo Cleetus](mailto:)
-* [Debin Baby](mailto:)
-* [Yohan Joseph](mailto:)
-* [Rakesh Prakash](mailto:)
+* [Rakesh Prakash](mailto:rakeshprakash91@outlook.com)
 * [Predhin Tom Sapru](mailto:predhin@hotmail.com)

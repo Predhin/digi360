@@ -1,0 +1,22 @@
+{
+  "name": "remote",
+  "version": "0.1.0",
+  "description": "hand gesture reader",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "author": "ctswdteam",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^2.0.1",
+    "express": "^4.16.4",
+    "http-shutdown": "^1.2.0",
+    "opencv4nodejs": "^4.9.0",
+    "opn": "^5.4.0",
+    "q": "^1.5.1",
+    "request": "^2.88.0",
+    "sleep": "^5.2.3",
+    "socket.io": "^2.1.1"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "webbased",
+  "version": "0.1.0",
+  "description": "Web Based gesture reader",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "author": "ctswdteam",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "config": "^2.0.1",
+    "express": "^4.16.4",
+    "http-shutdown": "^1.2.0",
+    "mqtt": "^2.18.8",
+    "onoff": "^3.2.2",
+    "q": "^1.5.1",
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1"
+  }
+}

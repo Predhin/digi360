@@ -1,0 +1,195 @@
+
+.fullHeight {
+  height: 100vh;
+}
+.fullWidth {
+  width: 100%;
+}
+.padTop {
+  padding-top: 13%;
+}
+.centerAligned {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.noSpace {
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+.video-box{
+  height:100vh;
+  width: 100%;
+  height: 100%;
+}
+.hand {
+  width: 15vw;
+  height: 15vh;
+}
+.handgesture-instruction {
+  padding-top: 5vh;
+  font-family: 'Open Sans';
+  font-size: 0.6em;
+}
+.video-box .overlay {
+  background-color: #25377E;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
+.video-box .overlay-square  {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 4vw solid rgba(29,28,52,0.2);
+  background-origin: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.video-box .overlay-square-inner {
+  text-align: center;
+    color: white;
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.video-box .overlay-square-inner-container {
+  padding-top: 30vh;
+}
+
+.noPaddingMargin {
+  padding: 0;
+  margin: 0;
+}
+.fan-body {
+  width: 19vw;
+  height: auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fan-leaf {
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    left: 37%;
+}
+.output-container {
+  height: 100%;
+}
+.current-status {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  color: #25377E;
+  font-size: 31px;
+  display: inline-block;
+}
+.scanning-loader {
+  width: 2vw;
+  height: auto;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+.reading-box{
+  height:300px;
+  border: 2px solid #4d4d4d;
+  width: 100%;
+  height: 100%;  
+  border-radius: 30px;
+  padding:30px;
+  padding-bottom: 25px;
+}
+.reading-box.scanner-wrapper {
+  padding-bottom: 5px;
+}
+
+.ui-wrapper{
+  margin: 0;
+  padding: 0;
+}
+
+.output-instruction {
+  font-family: 'Open Sans';
+  font-size: 1em;
+}
+
+
+#regionOfCapture {
+  height: 100vh;
+  width: 100%;
+}
+.scan.stop {
+  animation-play-state: paused;
+}
+.scan.start {
+  animation-play-state: running;
+  animation-duration: 0.9s;
+}
+.fan-wrapper{
+  margin-top: 35px;
+  padding-bottom: 15px;
+}
+
+.fan.off {
+  animation-play-state: paused;
+}
+
+.fan.low {
+  animation-play-state: running;
+  animation-duration: 1.2s;
+}
+
+.fan.medium {
+  animation-play-state: running;
+  animation-duration: 0.65s;
+}
+
+.fan.high {
+  animation-play-state: running;
+  animation-duration: 0.4s;
+}
+
+.scanner-text {
+  color: limegreen;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+#text {
+  margin-top: 10px;
+  color: #FFC400;
+  font-weight: bold;
+  font-size: xx-large;
+}
+@keyframes scan {
+  0%
+  {
+      transform: rotate(0deg);
+  }
+
+  100%
+  {
+      transform: rotate(360deg);
+  }
+}
+@keyframes fan {
+  0%
+  {
+      transform: rotate(0deg);
+  }
+
+  100%
+  {
+      transform: rotate(360deg);
+  }
+}

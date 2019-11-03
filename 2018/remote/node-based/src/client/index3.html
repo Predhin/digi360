@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digi360</title>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- Theme style  -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+ <img id="regionOfCapture" />
+<a id="text">Loading...</a>
+  <div class="gtco-loader"></div>
+
+  <div id="page">
+
+    <header>
+      <div id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+        <div class="gtco-container">
+          <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-left">
+              <div class="row row-mt-5em">
+                <div class="col-md-6 col-md-push-1 animate-box video-space" data-animate-effect="fadeInLeft">
+                  <div class="form-wrap">
+                    <div class="tab">
+                      <div class="tab-content">
+                        <div class="tab-content-inner active">
+                          <h3 class="cursive-font">Scaning Guesture...</h3>
+                        </div>
+                        <div class="video_box">
+                          <img id="regionOfCapture" />
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-md-push-1 animate-box data-space" data-animate-effect="fadeInLeft">
+                  <div class="form-wrap">
+                    <div class="tab">
+                      <div class="tab-content value-space">
+                        <div>
+                          <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                          <a id="text">Loading...</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="js/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Waypoints -->
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

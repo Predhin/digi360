@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Remote-Digi360</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="container">
+    <div class="row ui-wrapper">
+      <div class="col-md-9">
+        <div class="video-box text-center">
+          <img id="regionOfCapture" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="reading-box scanner-wrapper">
+              <div class="loader-wrapper">
+                <span class="loader-scanner" id="loader-scanner">
+            </span>
+                <i class="fa fa-hand-paper-o"></i>
+              </div>
+              <p id="scannerStatus" class="scanner-text text-center">Scanning...</p>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="reading-box fan-wrapper text-center">
+              <img class="fan fa-spin off" src="/images/fan.png" id="fan">
+              <br />
+               <div id="text">OFF</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

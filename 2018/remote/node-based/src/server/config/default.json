@@ -1,0 +1,6 @@
+{
+    "remote": {
+        "LOCAL": "http://192.168.43.147/",
+        "DEV": "https://io.adafruit.com/api/v2/debin/feeds/relayctrl/data?X-AIO-Key=f89ab6377116468d843292cdee71743c"
+    }
+}

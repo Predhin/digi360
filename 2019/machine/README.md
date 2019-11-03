@@ -4,8 +4,8 @@ Aims to provide an interface based on gesture classification using ML. This code
 
 ## WHAT'S IN
 
-- [ ] Pong Game using ML
-- [ ] Feedback collector app using ML
+- [x] Pong Game using ML
+- [x] Feedback collector app using ML
 
 ### Contribute
 
@@ -39,8 +39,10 @@ How to setup different Git profiles ?
 
 ### To Do
 
-- [ ] Gamification usecase
-- [ ] Feedback collector
+- [x] Gamification usecase
+- [x] Feedback collector
+- [ ] Multiplayer Gamification usecase
+- [ ] Feedback collector using ML5
 
 ### Change Log
 
