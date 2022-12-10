@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "config": "^2.0.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "http-shutdown": "^1.2.0",
     "opencv4nodejs": "^4.9.0",
     "opn": "^5.4.0",
