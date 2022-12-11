@@ -14,7 +14,7 @@
     "reload": "^3.0.3",
     "body-parser": "^1.19.0",
     "config": "^2.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-shutdown": "^1.2.1",
     "opn": "^5.5.0",
     "q": "^1.5.1",
