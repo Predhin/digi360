@@ -9,7 +9,7 @@
   "author": "ctswdteam",
   "license": "ISC",
   "dependencies": {
-    "config": "^2.0.1",
+    "config": "^3.3.8",
     "express": "^4.16.4",
     "http-shutdown": "^1.2.0",
     "opencv4nodejs": "^4.9.0",
